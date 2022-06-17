@@ -9,6 +9,10 @@ class Album extends Model
 {
     use HasFactory;
 
+    protected $casts = [
+        'featured' => 'boolean'
+    ];
+
     protected $fillable = [
         'title',
         'description',
