@@ -12,6 +12,7 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
+    protected $with = ['album'];
     /**
      * The attributes that are mass assignable.
      *
@@ -32,8 +33,12 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $hidden = [
+        'id',
         'password',
         'remember_token',
+        'email_verified_at',
+        'created_at',
+        'updated_at'
     ];
 
     /**
@@ -45,7 +50,7 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function albums(){
+    public function album(){
         return $this->hasMany(Album::class);
     }
 }

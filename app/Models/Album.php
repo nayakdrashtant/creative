@@ -13,6 +13,10 @@ class Album extends Model
         'featured' => 'boolean'
     ];
 
+    protected $appends = [
+        'date'
+    ];
+
     protected $fillable = [
         'title',
         'description',
@@ -25,4 +29,14 @@ class Album extends Model
     {
         return $this->belongsTo(User::class, 'user_id');
     }
+
+    public function getDateAttribute(){
+        return $this->created_at->format('Y-m-d');
+    }
+
+    protected $hidden = [
+        'user_id',
+        'created_at',
+        'updated_at'
+    ];
 }
