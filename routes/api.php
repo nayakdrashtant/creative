@@ -18,4 +18,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/profile',ProfileController::class);
+Route::get('/profile/{user}',[ProfileController::class,'show']);
