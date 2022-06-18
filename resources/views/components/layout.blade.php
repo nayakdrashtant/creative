@@ -9,7 +9,6 @@
     <script src="{{ asset('js/app.js')  }}" async></script>
 </head>
 <body class="antialiased max-w-5xl mx-auto p-10 bg-gradient-to-r from-orange-500 to-yellow-200">
-<div id="app">
-</div>
+{{$slot}}
 </body>
 </html>
