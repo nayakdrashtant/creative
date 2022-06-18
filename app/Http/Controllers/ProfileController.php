@@ -7,7 +7,12 @@ use Illuminate\Http\Request;
 
 class ProfileController extends Controller
 {
-    public function __invoke(){
-        return response()->json(User::first());
+    public function index(){
+        return view('welcome');
+    }
+
+    public function show($id)
+    {
+        return response()->json(User::where('id', $id)->first());
     }
 }
