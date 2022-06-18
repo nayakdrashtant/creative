@@ -23,7 +23,7 @@ export default {
             axios.get('/api/profile/1').then(res => {
                 this.data = res.data;
             }).catch(error => {
-                alert('Ops, something went wrong!!!');
+               // alert('Ops, something went wrong!!!');
                 console.log(error);
             })
         }
